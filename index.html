@@ -15,8 +15,11 @@
         </header>
 
         <div class="swap-card">
-            <!-- Di sini tempat widget akan muncul otomatis via JavaScript -->
-            <div id="uniswap-widget"></div>
+            <iframe 
+                src="https://app.uniswap.org/#/swap?theme=dark&exactField=input&exactToken=0x2791bca1f2de4661ed88a30c99a7a9449aa84174"
+                title="Uniswap Swap Widget"
+                id="uniswap-iframe">
+            </iframe>
         </div>
 
         <footer>
@@ -26,8 +29,6 @@
         </footer>
     </div>
 
-    <!-- Script external agar HTML biasa bisa membaca Widget Uniswap -->
-    <script src="https://unpkg.com/@uniswap/widgets@2.5.0/dist/bundle.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
