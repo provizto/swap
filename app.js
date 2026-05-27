@@ -1,18 +1,20 @@
-// Memastikan halaman telah dimuat sepenuhnya
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("DEX Interface siap dijalankan.");
-
-    // Contoh logika tambahan: Memunculkan pop-up disclaimer hukum saat user pertama datang
-    if (!localStorage.getItem("disclaimerAccepted")) {
-        const setuju = confirm(
-            "Pemberitahuan Hukum:\n\nPlatform ini hanya menyediakan antarmuka grafis pihak ketiga. Kami tidak menyimpan dana Anda dan tidak bertanggung jawab atas risiko di jaringan blockchain. Apakah Anda setuju?"
-        );
-        
-        if (setuju) {
-            localStorage.setItem("disclaimerAccepted", "true");
-        } else {
-            // Jika tidak setuju, arahkan ke halaman lain atau kosongkan halaman
-            document.body.innerHTML = "<h2 style='text-align:center; margin-top:50px;'>Anda harus menyetujui ketentuan untuk menggunakan platform ini.</h2>";
-        }
-    }
-});
+* **Isi seluruh file `app.js` Anda dengan ini:**
+  ```javascript
+  document.addEventListener("DOMContentLoaded", function() {
+      const widgetContainer = document.getElementById("uniswap-widget");
+      
+      if (window.UniswapWidget) {
+          window.UniswapWidget.render({
+              defaultChainId: 137, // Jaringan Polygon
+              jsonRpcEndpoint: "https://polygon-rpc.com", 
+              width: "100%",
+              theme: {
+                  backgroundColor: "#FFFFFF",
+                  primaryColor: "#1A1A1A",
+                  secondaryColor: "#7B7B7B",
+                  accentColor: "#4A90E2",
+                  borderRadius: 16
+              }
+          }, widgetContainer);
+      }
+  });
