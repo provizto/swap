@@ -109,11 +109,11 @@ header p {
 /* Disclaimer Regulasi Hukum */
 .disclaimer {
     font-size: 11px;
-    color: #4b5563;
+    color: #9ca3af; /* Mengubah warna menjadi abu-abu terang yang nyaman dibaca */
     line-height: 1.6;
     padding: 0 10px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1); /* Efek pendaran cahaya tipis */
 }
-
 /* Animasi Denyut untuk Logo */
 @keyframes pulse {
     0% { transform: scale(1); opacity: 0.8; }
