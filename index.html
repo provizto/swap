@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantum Swap - Futuristic DEX Interface</title>
+    <title>Zoniq Finance - Next-Gen DEX Interface</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Elemen Dekorasi Cahaya Neon Latar Belakang -->
     <div class="bg-glow glow-1"></div>
     <div class="bg-glow glow-2"></div>
 
@@ -15,13 +16,15 @@
         <header>
             <div class="logo-container">
                 <span class="logo-icon">✦</span>
-                <span class="logo-text">QUANTUM<span class="highlight">SWAP</span></span>
+                <span class="logo-text">ZONIQ<span class="highlight">FINANCE</span></span>
             </div>
             <h1>Next-Gen Token Exchange</h1>
             <p>Akses likuiditas global instan dengan keamanan enkripsi terdesentralisasi tingkat tinggi.</p>
         </header>
 
+        <!-- KOTAK UTAMA SWAP DENGAN EFEK GLASSMORPHISM -->
         <div class="swap-card">
+            <!-- Parameter link_id di bawah ini otomatis terhubung dengan akun mitra Anda -->
             <iframe 
                 src="https://swapspace.co/widget?link_id=MASUKKAN_PARTNER_ID_ANDA_DI_SINI&transparent=true&theme=dark&amount=0.1&from=eth&to=usdt&direction=from" 
                 style="width: 100%; height: 100%; border: none;"
@@ -31,9 +34,36 @@
 
         <footer>
             <p class="disclaimer">
-            *Platform ini murni bertindak sebagai UI Provider. Dengan bertransaksi, Anda menyetujui <a href="#tos" id="tos-link" style="color: #00f2fe; text-decoration: underline;">Ketentuan Layanan Hukum</a> kami.
+                *Platform ini murni bertindak sebagai UI Provider. Dengan bertransaksi, Anda menyetujui 
+                <a href="#" id="open-tos" class="tos-link">Ketentuan Layanan Hukum</a> kami.
             </p>
         </footer>
+    </div>
+
+    <!-- WINDOW POP-UP MODAL (TERSEMBUNYI SECARA DEFAULT) -->
+    <div id="tos-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Ketentuan Layanan & Pelepasan Tanggung Jawab</h2>
+                <span id="close-tos" class="close-btn">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h3>1. Status Hukum Platform</h3>
+                <p>Zoniq Finance (<b>zoniqfinance.com</b>) murni beroperasi sebagai <i>Non-Custodial Decentralized Exchange Interface</i> (Penyedia Antarmuka Grafis). Platform ini bukan merupakan pedagang aset kripto, bursa efek, atau penyedia lembaga keuangan terpusat. Seluruh fungsi pertukaran (swap) dieksekusi secara otomatis oleh protokol pihak ketiga terdesentralisasi melalui agregator API SwapSpace.</p>
+                
+                <h3>2. Ketiadaan Penguasaan Aset (Non-Custodial)</h3>
+                <p>Kami tidak pernah mengumpulkan, menerima, menyimpan, atau menguasai kunci privat (<i>private keys</i>) maupun aset kripto milik pengguna. Pengguna bertanggung jawab penuh atas keamanan dompet digital (<i>crypto wallet</i>) masing-masing.</p>
+                
+                <h3>3. Pelepasan Risiko Pasar & Teknis</h3>
+                <p>Zoniq Finance tidak bertanggung jawab atas kerugian finansial akibat volatilitas harga aset kripto di pasar, kegagalan transaksi, gangguan jaringan blockchain (<i>gas fee</i> tertahan), atau <i>exploit/bug</i> pada smart contract pihak ketiga.</p>
+                
+                <h3>4. Kepatuhan Regulasi & Pajak Mandiri</h3>
+                <p>Layanan ini tidak ditujukan untuk digunakan di yurisdiksi yang melarang transaksi aset digital. Pengguna wajib mematuhi hukum perpajakan yang berlaku di wilayah hukum masing-masing (termasuk PMK 68/2022 untuk yurisdiksi Indonesia) secara mandiri (<i>self-assessment</i>).</p>
+            </div>
+            <div class="modal-footer">
+                <button id="accept-tos-btn" class="action-btn">Saya Mengerti & Setuju</button>
+            </div>
+        </div>
     </div>
 
     <script src="app.js"></script>
