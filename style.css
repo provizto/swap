@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #030712; /* Hitam pekat antariksa */
+    background-color: #030712; 
     color: #ffffff;
     display: flex;
     justify-content: center;
@@ -25,12 +25,12 @@ body {
     pointer-events: none;
 }
 .glow-1 {
-    background: #00f2fe; /* Cyan elektrik */
+    background: #00f2fe; 
     top: 10%;
     left: -10%;
 }
 .glow-2 {
-    background: #4facfe; /* Biru neon */
+    background: #4facfe; 
     bottom: 10%;
     right: -10%;
 }
@@ -41,7 +41,7 @@ body {
     max-width: 460px;
     padding: 20px;
     text-align: center;
-    z-index: 1; /* Berada di atas cahaya background */
+    z-index: 1; 
 }
 
 /* Gaya Tipografi & Logo */
@@ -86,8 +86,8 @@ header p {
 
 /* Efek Kaca Transparan & Garis Menyala (Glassmorphism + Neon Border) */
 .swap-card {
-    background: rgba(17, 24, 39, 0.7); /* Transparan gelap */
-    backdrop-filter: blur(16px); /* Efek blur kaca */
+    background: rgba(17, 24, 39, 0.7); 
+    backdrop-filter: blur(16px); 
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 28px;
@@ -95,57 +95,129 @@ header p {
                 0 0 40px rgba(0, 242, 254, 0.05); 
     padding: 14px;
     margin-bottom: 24px;
-    height: 540px; /* Tinggi standar untuk Laptop/Desktop */
+    height: 540px;
     transition: all 0.3s ease;
 }
 
-/* Animasi interaktif saat kursor mendekati kartu */
 .swap-card:hover {
     border-color: rgba(0, 242, 254, 0.3);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 
                 0 0 40px rgba(0, 242, 254, 0.15);
 }
 
-/* Disclaimer Regulasi Hukum */
+/* Disclaimer Footer */
 .disclaimer {
     font-size: 11px;
     color: #9ca3af; 
     line-height: 1.6;
     padding: 0 10px;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1); 
+}
+.tos-link {
+    color: #00f2fe;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 600;
 }
 
-/* Animasi Denyut untuk Logo */
+/* STYLE SYSTEM WINDOW MODAL (TOS) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+.modal-content {
+    background: #0d111c;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 90%;
+    max-width: 500px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 242, 254, 0.2);
+}
+.modal-header {
+    background: #161b26;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.modal-header h2 {
+    font-size: 16px;
+    margin: 0;
+    color: #00f2fe;
+}
+.close-btn {
+    font-size: 24px;
+    cursor: pointer;
+    color: #9ca3af;
+}
+.close-btn:hover { color: #ffffff; }
+.modal-body {
+    padding: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+    text-align: left;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #d1d5db;
+}
+.modal-body h3 {
+    font-size: 14px;
+    color: #ffffff;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.modal-body p { margin: 0 0 10px 0; }
+.modal-footer {
+    padding: 15px 20px;
+    background: #161b26;
+    text-align: right;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.action-btn {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    border: none;
+    padding: 10px 20px;
+    color: #000000;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.action-btn:hover { transform: scale(1.03); }
+
 @keyframes pulse {
     0% { transform: scale(1); opacity: 0.8; }
     100% { transform: scale(1.1); opacity: 1; }
 }
 
 /* =======================================================
-   KODE TAMBAHAN: OTOMATIS MEMBUAT PRESISI DI LAYAR HP
+   OTOMATIS MEMBUAT PRESISI DI LAYAR HP (RESPONSIVE VIEW)
    ======================================================= */
 @media screen and (max-width: 480px) {
-    .app-container {
-        padding: 10px; /* Memperkecil jarak tepi agar space di HP lebih luas */
-    }
-
-    header h1 {
-        font-size: 22px; /* Memperkecil ukuran judul di HP agar tidak patah berantakan */
-    }
-
-    header p {
-        font-size: 12px;
-        margin-bottom: 20px;
-    }
-
+    .app-container { padding: 10px; }
+    header h1 { font-size: 22px; }
+    header p { font-size: 12px; margin-bottom: 20px; }
     .swap-card {
-        height: 480px; /* Menyesuaikan tinggi kotak swap agar pas dengan rasio layar HP */
-        padding: 8px;  /* Memperkecil padding internal kartu di HP */
-        border-radius: 20px; /* Membikin sudut lengkungan sedikit lebih tegas di HP */
+        height: 480px; 
+        padding: 8px;  
+        border-radius: 20px; 
     }
-    
-    .disclaimer {
-        font-size: 10px; /* Memperkecil ukuran teks regulasi agar pas dibaca di layar HP */
-        padding: 0 5px;
-    }
+    .disclaimer { font-size: 10px; padding: 0 5px; }
 }
